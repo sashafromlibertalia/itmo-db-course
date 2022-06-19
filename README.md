@@ -4,4 +4,4 @@
 
 ## Слова благодарности
 
-Без [Саши](https://github.com/sashafromlibertalia) **(спасибо за фронт)** и [Искандера](https://github.com/iskander-faggod) данного репозитория не было бы.
+Без [Липы](https://github.com/lipa44) и [Искандера](https://github.com/iskander-faggod) данного репозитория не было бы.
