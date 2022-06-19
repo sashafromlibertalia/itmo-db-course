@@ -11,6 +11,6 @@ jobs:
         uses: jenkey2011/vuepress-deploy@master
         env:
           ACCESS_TOKEN: ${{ secrets.ITMO_DB_VUEPRESS }}
-          TARGET_REPO: sashafromlibertalia/itmo-db-course
+          TARGET_REPO: lipa44/itmo-db-course
           BUILD_SCRIPT: cd docs && yarn install && yarn build
           BUILD_DIR: src/.vuepress/dist
