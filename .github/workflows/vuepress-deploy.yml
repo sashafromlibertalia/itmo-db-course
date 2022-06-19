@@ -1,18 +1,16 @@
 name: Build and Deploy
-on: [push]
+on: [ push ]
 jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
+      - name: Checkout
+        uses: actions/checkout@main
 
-    - name: vuepress-deploy
-      uses: jenkey2011/vuepress-deploy@master
-      env:
-        ACCESS_TOKEN: ${{ secrets.ITMO_DB_VUEPRESS }}
-        TARGET_REPO: username/repo
-        TARGET_BRANCH: main
-        BUILD_SCRIPT: yarn && yarn build
-        BUILD_DIR: docs/.vuepress/dist
-        CNAME: https://www.xxx.com
+      - name: vuepress-deploy
+        uses: jenkey2011/vuepress-deploy@master
+        env:
+          ACCESS_TOKEN: ${{ secrets.ITMO_DB_VUEPRESS }}
+          TARGET_REPO: sashafromlibertalia/sparkle
+          BUILD_SCRIPT: cd docs && yarn install && yarn build
+          BUILD_DIR: docs/.vuepress/dist
