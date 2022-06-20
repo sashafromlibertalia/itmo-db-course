@@ -2,11 +2,11 @@ using System.Text;
 using System.Text.RegularExpressions;
 
 const string localPath = @"C:\Users\user.local\";
-const string mdPath = @"C:\Users\user.local\CodeProjects\ITMO-IS-DB-4-SEM\Exam\exam.md";
+const string thirdHeading = "###";
 const string secondHeading = "##";
 const string firstHeading = "#";
+string mdPath = Path.Combine(localPath, "CodeProjects", "ITMO-IS-DB-4-SEM", "Exam", "exam.md");
 string questionsDir = Path.Combine(localPath, "VSCodeProjects", "itmo-db-course", "docs", "src", "exam");
-string titleDir = Path.Combine(localPath, "RiderProjects", "MdParser", "MdParser");
 
 var lines = File.ReadLines(mdPath).ToList();
 
@@ -16,6 +16,8 @@ var secondHeadingIndexes = lines
     .ToList();
 
 var titleBuilder = new StringBuilder();
+titleBuilder.AppendLine($"# Билеты по БД 2022{Environment.NewLine}");
+
 foreach (var currentQuestionIndex in secondHeadingIndexes)
 {
     var questionNumberChars = lines[currentQuestionIndex]
@@ -40,10 +42,7 @@ foreach (var currentQuestionIndex in secondHeadingIndexes)
     File.AppendAllLines(questionFilePath, questionLines);
 }
 
-Directory.CreateDirectory(titleDir);
-
-File.Create(Path.Combine(titleDir, "title.md")).Dispose();
-File.AppendAllText(Path.Combine(titleDir, "title.md"), titleBuilder.ToString());
+File.WriteAllText(Path.Combine(questionsDir, "README.md"), titleBuilder.ToString());
 
 void DecrementHeadings(List<int> headingIndexes, IList<string> text)
 {
@@ -62,7 +61,7 @@ void DecrementHeadings(List<int> headingIndexes, IList<string> text)
 void AppendQuestionToTitle(StringBuilder titleBuilder, string questionText, string questionNumber)
 {
     titleBuilder.AppendLine(
-        $"{secondHeading} [{questionText.Replace($"{secondHeading} ", string.Empty)}](../exam/Question_{questionNumber}.md){Environment.NewLine}");
+        $"{thirdHeading} [{questionText.Replace($"{secondHeading} ", string.Empty)}](../exam/Question_{questionNumber}.md){Environment.NewLine}");
 }
 
 List<string> CutQuestionLinesByQuestionIndex(IList<string> allLines, IList<int> headingIndexes, int currentIndex)
