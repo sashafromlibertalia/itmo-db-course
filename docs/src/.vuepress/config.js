@@ -11,7 +11,9 @@ module.exports = {
   ],
   base: '/itmo-db-course/',
   themeConfig: {
-    repo: '',
+    searchPlaceholder: 'Индекс это...',
+    repo: 'https://github.com/sashafromlibertalia/itmo-db-course.git',
+    repoLabel: 'Пофиксить баги!',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
