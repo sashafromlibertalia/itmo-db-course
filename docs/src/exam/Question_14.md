@@ -5,7 +5,7 @@
 ```sql
 SELECT [DISTINCT | ALL] { * | [ColumsExpression [AS NewName], ... ] }
 FROM TableName [AS NewName]
-    [ { INNER | LEFTOUTER | FULL } JOIN ] TasbeName2 [AS NewName]
+    [ { INNER | LEFT | RIGHT | OUTER | FULL } JOIN ] TableName2 [AS NewName]
     ON condition ]
 [ WHERE condition ]
 [ GROUP BY ColumnList ]
