@@ -13,7 +13,7 @@ module.exports = {
   themeConfig: {
     searchPlaceholder: 'Индекс это...',
     repo: 'https://github.com/sashafromlibertalia/itmo-db-course.git',
-    repoLabel: 'Пофиксить баги!',
+    repoLabel: 'GitHub',
     editLinks: false,
     docsDir: '',
     editLinkText: '',
@@ -24,8 +24,8 @@ module.exports = {
         link: '/exam/',
       },
       {
-        text: 'GitHub',
-        link: 'https://github.com/sashafromlibertalia/itmo-db-course'
+        text: 'Пофиксить баги!',
+        link: 'https://github.com/sashafromlibertalia/itmo-db-course/tree/main/docs/src/exam'
       }
     ],
     sidebar: {
