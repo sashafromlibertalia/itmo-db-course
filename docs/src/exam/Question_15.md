@@ -39,7 +39,7 @@ for r in R
 R.sort(atr)
 S.sort(atr)
 
-while not EndOF(S) ans not EndOF(R)
+while not EndOF(S) and not EndOF(R)
     if (r.atr < s.atr)
         next(R)
     if (r.atr = s.atr)
